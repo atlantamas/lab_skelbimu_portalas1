@@ -1,9 +1,8 @@
 import React from "react"
 
 const App = function ()
-
 {
-    const span = React.createElement("span", {}, "hola")
+    const span = <span>Aloha</span>
 
     return span
 }
