@@ -36,6 +36,18 @@ const model_users_create = async function (
             }
         )
 
+        await config_users.mongodb_client.updateOne(
+            {
+                username: param_username
+            },
+            {
+                $setOnInsert: document
+            },
+            {
+                upsert: true
+            }
+        )
+
     // error: username already taken
 
     if (result_of_update.matchedCount === 1)
